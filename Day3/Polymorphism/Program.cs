@@ -10,7 +10,7 @@ namespace Polymorphism
     {
         Role1,Role2,Role3
     }
-    class User
+    abstract class User
     {
         public static int count = 0;
         public string name { get; }
@@ -23,10 +23,7 @@ namespace Polymorphism
         {
             this.name = name;
         }
-        public virtual void Enter()
-        {
-            Console.WriteLine("User Entered: 1");
-        }
+        public abstract void Enter();
     }
     class Employee : User
     {
@@ -35,7 +32,7 @@ namespace Polymorphism
         {
             this.role = role.Role2;
         }
-        public new void Enter()
+        public override void Enter()
         {
             Console.WriteLine("Employee Entered: 2");
         }
